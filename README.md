@@ -40,7 +40,7 @@ Aplikasi ini **bukan alat trading otomatis**, melainkan **catatan historis dan e
 ## 🌐 Demo
 
 🔗 **Demo aplikasi**:
-👉 [https://demo.rchtechno.com/catatan-investasi](https://demo.rchtechno.com/catatan-investasi)
+👉 [https://demo.rchtechno.com/admin/](https://demo.rchtechno.com/admin/)
 
 > Catatan: demo hanya untuk preview fitur, data dapat berubah sewaktu-waktu.
 
@@ -153,6 +153,7 @@ Project ini bersifat **personal project**, namun jika ingin berdiskusi atau memb
 ## 👤 Author
 
 Dibuat oleh **Rahmad Setia Budi**
+
 GitHub: [https://github.com/sinausik](https://github.com/sinausik)
 
 ---
