@@ -21,7 +21,7 @@ class InvestmentsTable
                     ->sortable(),
                 TextColumn::make('asset.code')
                     ->label('Code')
-                    ->toggleable(),
+                    ->searchable(),
                 TextColumn::make('buy_price')
                     ->label('Buy')
                     ->money(fn ($record) => $record->asset->currency ?? 'IDR'),
@@ -72,6 +72,8 @@ class InvestmentsTable
                         'hold' => 'Hold',
                         'sold' => 'Sold',
                     ]),
+                SelectFilter::make('asset')
+                    ->relationship('asset', 'code'),
             ])
             ->recordActions([
                 // EditAction::make(),
