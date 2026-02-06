@@ -13,17 +13,21 @@ class PortfolioStats extends StatsOverviewWidget
         $portfolio = app(PortfolioService::class);
 
         return [
-            Stat::make('Current Invested', number_format($portfolio->totalCurrentInvested(),2,',','.')),
+            Stat::make('Current Invested', number_format($portfolio->totalCurrentInvested(),2,',','.'))
+                ->description('Capital'),
 
-            Stat::make('Portfolio', number_format($portfolio->totalCurrentValue(),2,',','.')),
+            Stat::make('Portfolio', number_format($portfolio->totalCurrentValue(),2,',','.'))
+                ->description('Capital gain'),
 
             Stat::make('Floating Profit', number_format($portfolio->totalProfit(),2,',','.'))
+                ->description(number_format($portfolio->totalProfitPercent(), 2) . '% current')
+                ->descriptionIcon($portfolio->totalProfit() >= 0 ? 'heroicon-m-arrow-trending-up' : 'heroicon-m-arrow-trending-down')
                 ->color($portfolio->totalProfit() >= 0 ? 'success' : 'danger'),
 
-            Stat::make('Profit %', number_format($portfolio->totalProfitPercent(), 2) . '%')
-                ->color($portfolio->totalProfitPercent() >= 0 ? 'success' : 'danger'),
-
-            Stat::make('Take Profit', number_format($portfolio->totalRealizedInvested(),2,',','.')),
+            Stat::make('Take Profit', number_format($portfolio->totalRealizedInvested(),2,',','.'))
+                ->description('Realized Profit')
+                ->descriptionIcon('heroicon-m-arrow-trending-up')
+                ->color('success'),
         ];
     }
 }
