@@ -27,6 +27,7 @@ class AssetForm
                     ->options([
                         'manual' => 'Manual',
                         'yahoo' => 'Yahoo Finance',
+                        'treasury' => 'Treasury.id',
                     ])
                     ->required(),
                 TextInput::make('manual_price')
